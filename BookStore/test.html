@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Favorite Button Test</title>
+</head>
+<body>
+  <h2>Test Favorite Toggle</h2>
+
+  <div class="card">
+    <h3>Sample Book</h3>
+    <button type="button"
+            class="favorite-btn"
+            onclick="toggleFavoriteFromButton(this)"
+            data-id="sample-book"
+            data-info='{"title":"Sample Book","authors":["John Doe"]}'>
+      ❤ Favorite
+    </button>
+  </div>
+
+  <script>
+    function toggleFavoriteFromButton(button) {
+      const bookId = button.getAttribute("data-id");
+      const info = JSON.parse(button.getAttribute("data-info"));
+      const favorites = JSON.parse(localStorage.getItem("favorites") || "{}");
+
+      if (favorites[bookId]) {
+        delete favorites[bookId];
+        button.textContent = "❤ Favorite";
+      } else {
+        favorites[bookId] = info;
+        button.textContent = "❤ Remove";
+      }
+
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+    // Set initial state on page load
+    window.addEventListener("load", () => {
+      const button = document.querySelector(".favorite-btn");
+      const bookId = button.getAttribute("data-id");
+      const favorites = JSON.parse(localStorage.getItem("favorites") || "{}");
+
+      if (favorites[bookId]) {
+        button.textContent = "❤ Remove";
+      } else {
+        button.textContent = "❤ Favorite";
+      }
+    });
+  </script>
+</body>
+</html>

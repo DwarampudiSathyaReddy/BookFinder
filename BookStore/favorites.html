@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+  
+  <nav class="navbar">
+    <div class="nav-brand">📚 BookFinder</div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="readlater.html">⏰ Read Later</a></li>
+      <li><a href="favorites.html" class="active">❤ Favorites</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="#" onclick="toggleDark()">🌙</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+  </nav>
+
+  <div class="container">
+    <h1>❤ Your Favorites</h1>
+    <div class="controls">
+      <input type="text" id="favoritesSearch" placeholder="Search favorites...">
+      <button onclick="voiceSearch('favoritesSearch')">🎤</button>
+    </div>
+    <div class="results" id="favoritesList"></div>
+  </div>
+
+  <!-- Load scripts -->
+  <script src="script.js"></script>
+
+  <!-- ✅ FORCE the showFavorites() call to run -->
+  <script>
+    window.addEventListener("load", function () {
+      document.getElementById("preloader").classList.add("hide");
+      showFavorites();
+    });
+  </script>
+</body>
+</html>

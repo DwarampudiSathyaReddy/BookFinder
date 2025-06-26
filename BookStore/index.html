@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookFinder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <nav class="navbar">
+    <div class="nav-brand">📚 BookFinder</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">🏠 Home</a></li>
+      <li><a href="readlater.html">⏰ Read Later</a></li>
+      <li><a href="favorites.html">❤ Favorites</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="#" onclick="toggleDark()">🌙</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+  </nav>
+  <div class="container">
+    <h1>Find Your Next Book</h1>
+    <div class="controls">
+      <input type="text" id="query" placeholder="Search books...">
+      <button onclick="voiceSearch('query')">🎤</button>
+      <select id="sort">
+        <option value="">Sort By</option>
+        <option value="relevance">Relevance</option>
+        <option value="newest">Newest</option>
+      </select>
+      <select id="filter">
+        <option value="">All</option>
+        <option value="free-ebooks">Free</option>
+        <option value="paid-ebooks">Paid</option>
+      </select>
+      <button onclick="searchBooks()">🔍</button>
+    </div>
+    <div class="results" id="books"></div>
+    <div class="reader-container" id="reader"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About BookFinder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <nav class="navbar">
+    <div class="nav-brand">📚 BookFinder</div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="readlater.html">⏰ Read Later</a></li>
+      <li><a href="favorites.html">❤ Favorites</a></li>
+      <li><a href="about.html" class="active">ℹ️ About</a></li>
+      <li><a href="#" onclick="toggleDark()">🌙</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+  </nav>
+  <div class="container about-container">
+    <h1>About BookFinder</h1>
+    <div class="about-card">
+      <h2>Explore Books Easily</h2>
+      <p>BookFinder uses the Google Books API to help you search, read, download, and save books. Features include:</p>
+      <ul>
+        <li>📖 Read book previews</li>
+        <li>📥 Download free eBooks</li>
+        <li>❤ Save to Favorites</li>
+        <li>⏰ Mark for Read Later</li>
+      </ul>
+      <p>Built in 2025 for book enthusiasts.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Later</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <nav class="navbar">
+    <div class="nav-brand">📚 BookFinder</div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="readlater.html" class="active">⏰ Read Later</a></li>
+      <li><a href="favorites.html">❤ Favorites</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="#" onclick="toggleDark()">🌙</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+  </nav>
+  <div class="container">
+    <h1>⏰ Read Later</h1>
+    <div class="controls">
+      <input type="text" id="readLaterSearch" placeholder="Search read later...">
+      <button onclick="voiceSearch('readLaterSearch')">🎤</button>
+    </div>
+    <div class="results" id="readLaterList"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
